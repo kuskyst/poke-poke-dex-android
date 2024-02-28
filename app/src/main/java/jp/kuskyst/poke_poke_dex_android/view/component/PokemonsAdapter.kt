@@ -1,0 +1,41 @@
+package jp.kuskyst.poke_poke_dex_android.view.component
+
+import android.net.Uri
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
+import jp.kuskyst.poke_poke_dex_android.R
+import jp.kuskyst.poke_poke_dex_android.databinding.RowPokemonBinding
+import jp.kuskyst.poke_poke_dex_android.model.entity.child.Results
+
+class PokemonsAdapter(
+            private val pokemons: Array<Results>,
+            private val listener : PokemonItemClickListener)
+        : RecyclerView.Adapter<PokemonsViewHolder>() {
+
+    private lateinit var glide: RequestManager
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonsViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        this.glide = Glide.with(parent.context)
+        val binding: RowPokemonBinding = DataBindingUtil.inflate(inflater, R.layout.row_pokemon, parent, false)
+        return PokemonsViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: PokemonsViewHolder, position: Int) {
+        holder.binding.id = Uri.parse(this.pokemons[position].url.toString()).lastPathSegment!!
+        holder.binding.pokemon = this.pokemons[position]
+        this.glide
+            .load(Uri.parse("https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/" + holder.binding.id + ".png"))
+            .into(holder.binding.pokemonRowImage)
+        holder.itemView.setOnClickListener {
+            this.listener.onItemClickListener(holder.binding.id.toString())
+        }
+    }
+
+    override fun getItemCount(): Int = this.pokemons.size
+
+}
