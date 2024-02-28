@@ -5,12 +5,11 @@
 | ---- | ---- |
 | Language| Android Kotlin 1.8 |
 | Architecture | MVVM |
-| UI | DataBinding |
-| Transition | Navigation |
+| UI | DataBinding, Glide |
+| Transition | Navigation, SafeArgs |
 | Asynchronous | Retrofit 2 |
 | DI | Hilt |
-| Test | Junit |
-| etc | Glide |
+| Test | JUnit |
 
 # Image
 <img width=150 src="https://github.com/kuskyst/poke-poke-dex-ios/assets/126965999/21025d76-4361-4a25-afe7-ff8c4d46f545">
