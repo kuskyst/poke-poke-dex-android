@@ -12,8 +12,8 @@
 | Test | JUnit                    |
 
 # Todo
-[ ] UI
-[ ] DI
-[ ] UI
+- [ ] UI
+- [ ] DI
+- [ ] unit test
 
 # Image
