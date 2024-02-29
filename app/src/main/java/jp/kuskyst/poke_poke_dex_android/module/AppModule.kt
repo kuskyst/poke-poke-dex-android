@@ -25,8 +25,8 @@ object AppModule {
             .build()
             .create(PokeApiService::class.java)
 
-    @Singleton
     @Provides
+    @Singleton
     fun provideHttpClient(): OkHttpClient =
         OkHttpClient.Builder()
             .connectTimeout(90, TimeUnit.SECONDS)
