@@ -3,10 +3,10 @@ package jp.kuskyst.poke_poke_dex_android.model.constant
 class ApiConstant {
     companion object {
         const val pokeApiBaseUrl = "https://pokeapi.co/"
-        const val replaceId = "{id}"
-        const val image1Url = "https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/{id}.png"
-        const val image2Url = "https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/back/{id}.png"
-        const val image3Url = "https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/shiny/{id}.png"
-        const val image4Url = "https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/back/shiny/{id}.png"
+        const val ImageBaseUrl = "https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon"
+        fun image1Url(id: String) = "$ImageBaseUrl/$id.png"
+        fun image2Url(id: String) = "$ImageBaseUrl/back/$id.png"
+        fun image3Url(id: String) = "$ImageBaseUrl/shiny/$id.png"
+        fun image4Url(id: String) = "$ImageBaseUrl/back/shiny/$id.png"
     }
 }

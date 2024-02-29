@@ -28,7 +28,7 @@ class PokemonsAdapter(
         holder.binding.id = Uri.parse(this.pokemons[position].url.toString()).lastPathSegment!!
         holder.binding.pokemon = this.pokemons[position]
         Glide.with(this.context)
-            .load(Uri.parse(ApiConstant.image1Url.replace(ApiConstant.replaceId, holder.binding.id.toString())))
+            .load(Uri.parse(ApiConstant.image1Url(holder.binding.id.toString())))
             .into(holder.binding.pokemonRowImage)
         holder.itemView.setOnClickListener {
             this.listener.onItemClickListener(holder.binding.id.toString())
