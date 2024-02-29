@@ -8,7 +8,7 @@
             type="jp.kuskyst.poke_poke_dex_android.viewmodel.DetailViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/list"
+        android:id="@+id/detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.screen.DetailFragment">
@@ -22,20 +22,24 @@
             app:layout_constraintEnd_toEndOf="parent">
             <ImageView
                 android:id="@+id/pokemon_image1"
+                android:contentDescription="@string/image_description1"
                 android:layout_width="70dp"
                 android:layout_height="70dp" />
             <ImageView
                 android:id="@+id/pokemon_image2"
+                android:contentDescription="@string/image_description2"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="20dp" />
             <ImageView
                 android:id="@+id/pokemon_image3"
+                android:contentDescription="@string/image_description3"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="20dp" />
             <ImageView
                 android:id="@+id/pokemon_image4"
+                android:contentDescription="@string/image_description4"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="20dp" />
