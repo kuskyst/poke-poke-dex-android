@@ -7,9 +7,13 @@ import jp.kuskyst.poke_poke_dex_android.model.entity.ListResponse
 import jp.kuskyst.poke_poke_dex_android.model.entity.SpeciesResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class PokeApiRepository {
-    private var service: PokeApiService = Retrofit.Builder()
+@Singleton
+class PokeApiRepository @Inject constructor() {
+
+    private val service: PokeApiService = Retrofit.Builder()
         .baseUrl(ApiConstant.pokeApiBaseUrl)
         .addConverterFactory(GsonConverterFactory.create())
         .build()

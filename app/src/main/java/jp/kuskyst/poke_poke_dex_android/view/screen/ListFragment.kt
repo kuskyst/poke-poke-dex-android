@@ -1,30 +1,27 @@
 package jp.kuskyst.poke_poke_dex_android.view.screen
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import jp.kuskyst.poke_poke_dex_android.R
 import jp.kuskyst.poke_poke_dex_android.databinding.FragmentListBinding
 import jp.kuskyst.poke_poke_dex_android.view.component.PokemonItemClickListener
 import jp.kuskyst.poke_poke_dex_android.view.component.PokemonsAdapter
 import jp.kuskyst.poke_poke_dex_android.viewmodel.ListViewModel
 
-class ListFragment : Fragment() {
+@AndroidEntryPoint
+class ListFragment : Fragment(R.layout.fragment_list) {
 
     private lateinit var binding: FragmentListBinding
-    private lateinit var viewModel: ListViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        this.viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
-    }
+    private val viewModel: ListViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
