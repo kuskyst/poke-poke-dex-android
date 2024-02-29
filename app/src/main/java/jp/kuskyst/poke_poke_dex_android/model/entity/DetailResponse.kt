@@ -5,7 +5,7 @@ import jp.kuskyst.poke_poke_dex_android.model.entity.child.Stats
 import jp.kuskyst.poke_poke_dex_android.model.entity.child.Types
 
 data class DetailResponse(
-    val id: Int,
+    val id: String,
     val name: String,
     val height: Double,
     val weight: Double,

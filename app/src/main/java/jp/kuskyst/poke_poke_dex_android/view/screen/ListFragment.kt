@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,12 +15,14 @@ import jp.kuskyst.poke_poke_dex_android.databinding.FragmentListBinding
 import jp.kuskyst.poke_poke_dex_android.view.component.PokemonItemClickListener
 import jp.kuskyst.poke_poke_dex_android.view.component.PokemonsAdapter
 import jp.kuskyst.poke_poke_dex_android.viewmodel.ListViewModel
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class ListFragment : Fragment(R.layout.fragment_list) {
 
     private lateinit var binding: FragmentListBinding
     private val viewModel: ListViewModel by viewModels()
+    lateinit var adapter: PokemonsAdapter @Inject set
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,19 +31,19 @@ class ListFragment : Fragment(R.layout.fragment_list) {
         this.binding = FragmentListBinding.inflate(inflater, container, false)
         this.binding.pokemonList.layoutManager = LinearLayoutManager(this.context)
         this.binding.pokemonList.addItemDecoration(
-            DividerItemDecoration(this.context, LinearLayoutManager(this.context).getOrientation()))
+            DividerItemDecoration(this.context, LinearLayoutManager(this.context).orientation))
 
-        this.viewModel.pokemons.observe(this.viewLifecycleOwner, Observer { it ->
-            this.binding.pokemonList.adapter = PokemonsAdapter(it.results, this.requireContext(),
-                object : PokemonItemClickListener {
-                    override fun onItemClickListener(id: String) {
-                        findNavController().navigate(R.id.action_listFragment_to_detailFragment,
-                            Bundle().apply { putString("id", id) }
-                        )
-                    }
+        this.viewModel.pokemons.observe(this.viewLifecycleOwner) {
+            this.adapter.pokemons = it.results
+            this.adapter.listener = object : PokemonItemClickListener {
+                override fun onItemClickListener(id: String) {
+                    findNavController().navigate(R.id.action_listFragment_to_detailFragment,
+                        Bundle().apply { putString("id", id) }
+                    )
                 }
-            )
-        })
+            }
+            this.binding.pokemonList.adapter = this.adapter
+        }
         this.viewModel.getList(151, 0)
 
         return this.binding.root

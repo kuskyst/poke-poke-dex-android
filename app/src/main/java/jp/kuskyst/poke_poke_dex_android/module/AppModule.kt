@@ -1,8 +1,12 @@
 package jp.kuskyst.poke_poke_dex_android.module
 
+import android.content.Context
+import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import jp.kuskyst.poke_poke_dex_android.BuildConfig
 import jp.kuskyst.poke_poke_dex_android.model.service.PokeApiService
@@ -33,5 +37,10 @@ object AppModule {
             .readTimeout(90, TimeUnit.SECONDS)
             .writeTimeout(90, TimeUnit.SECONDS)
             .build()
+
+    @Provides
+    @Singleton
+    fun provideGlideRequestManager(
+        @ApplicationContext context: Context): RequestManager = Glide.with(context)
 
 }

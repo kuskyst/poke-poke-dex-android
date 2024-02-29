@@ -18,12 +18,12 @@ class PokeApiRepository @Inject constructor(
         return if (response.isSuccessful) response.body() else null
     }
 
-    suspend fun getDetail(id: Int): DetailResponse? {
+    suspend fun getDetail(id: String): DetailResponse? {
         val response = this.service.getDetail(id)
         return if (response.isSuccessful) response.body() else null
     }
 
-    suspend fun getSpecies(id: Int): SpeciesResponse? {
+    suspend fun getSpecies(id: String): SpeciesResponse? {
         val response = this.service.getSpecies(id)
         return if (response.isSuccessful) response.body() else null
     }

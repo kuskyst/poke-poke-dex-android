@@ -14,9 +14,9 @@ interface PokeApiService {
     suspend fun getList(@Query("limit") limit: Int, @Query("offset") offset: Int): Response<ListResponse>
 
     @GET("api/v2/pokemon/{id}")
-    suspend fun getDetail(@Path("id") id: Int): Response<DetailResponse>
+    suspend fun getDetail(@Path("id") id: String): Response<DetailResponse>
 
     @GET("api/v2/pokemon-species/{id}")
-    suspend fun getSpecies(@Path("id") id: Int): Response<SpeciesResponse>
+    suspend fun getSpecies(@Path("id") id: String): Response<SpeciesResponse>
 
 }
