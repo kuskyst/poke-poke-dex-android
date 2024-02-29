@@ -8,7 +8,7 @@
             type="String" />
         <variable
             name="pokemon"
-            type="jp.kuskyst.poke_poke_dex_android.model.entity.child.Results"/>
+            type="jp.kuskyst.poke_poke_dex_android.model.entity.child.Results" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

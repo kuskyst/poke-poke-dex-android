@@ -3,6 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
+        <variable
+            name="vm"
+            type="jp.kuskyst.poke_poke_dex_android.viewmodel.DetailViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/list"
@@ -10,15 +13,137 @@
         android:layout_height="match_parent"
         tools:context=".view.screen.DetailFragment">
 
-        <TextView
-            android:id="@+id/message"
+        <LinearLayout
+            android:id="@+id/image_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DetailFragment"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent">
+            <ImageView
+                android:id="@+id/pokemon_image1"
+                android:layout_width="70dp"
+                android:layout_height="70dp" />
+            <ImageView
+                android:id="@+id/pokemon_image2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="20dp" />
+            <ImageView
+                android:id="@+id/pokemon_image3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="20dp" />
+            <ImageView
+                android:id="@+id/pokemon_image4"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="20dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_class"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/image_list"
+            app:layout_constraintStart_toStartOf="@+id/image_list" />
+
+        <TextView
+            android:id="@+id/pokemon_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.detail.name}"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@+id/item_class"
+            app:layout_constraintEnd_toEndOf="@+id/image_list" />
+
+        <TextView
+            android:id="@+id/item_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_type"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/item_class"
+            app:layout_constraintStart_toStartOf="@+id/image_list" />
+
+        <TextView
+            android:id="@+id/pokemon_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.detail.types[0].type.name + @string/type_interfix + vm.detail.types[1].type.name}"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@+id/item_type"
+            app:layout_constraintEnd_toEndOf="@+id/image_list" />
+
+        <TextView
+            android:id="@+id/item_height_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_height_weight"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/item_type"
+            app:layout_constraintStart_toStartOf="@+id/image_list" />
+
+        <TextView
+            android:id="@+id/pokemon_height_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(vm.detail.height / 10) + @string/height_suffix + String.valueOf(vm.detail.weight / 10) + @string/weight_suffix}"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@+id/item_height_weight"
+            app:layout_constraintEnd_toEndOf="@+id/image_list" />
+
+        <TextView
+            android:id="@+id/item_egg_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_egg_group"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/item_height_weight"
+            app:layout_constraintStart_toStartOf="@+id/image_list" />
+
+        <TextView
+            android:id="@+id/pokemon_egg_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.species.egg_groups[0].name + @string/egg_group_interfix + vm.species.egg_groups[1].name}"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@+id/item_egg_group"
+            app:layout_constraintEnd_toEndOf="@+id/image_list" />
+
+        <TextView
+            android:id="@+id/item_flavor_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_flavor_text"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@+id/item_egg_group"
+            app:layout_constraintStart_toStartOf="@+id/image_list" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/flavor_text_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            tools:listitem="@layout/row_flavortext"
+            app:layout_constraintTop_toBottomOf="@+id/item_flavor_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/image_list"
+            app:layout_constraintEnd_toEndOf="@+id/image_list" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

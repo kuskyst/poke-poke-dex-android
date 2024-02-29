@@ -20,7 +20,6 @@ import jp.kuskyst.poke_poke_dex_android.viewmodel.ListViewModel
 class ListFragment : Fragment() {
 
     private lateinit var binding: FragmentListBinding
-    private lateinit var adapter: PokemonsAdapter
     private lateinit var viewModel: ListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,18 +34,18 @@ class ListFragment : Fragment() {
         this.binding = FragmentListBinding.inflate(inflater, container, false)
         this.binding.pokemonList.layoutManager = LinearLayoutManager(this.context)
         this.binding.pokemonList.addItemDecoration(
-            DividerItemDecoration(this.context,
-                LinearLayoutManager(this.context).getOrientation()))
+            DividerItemDecoration(this.context, LinearLayoutManager(this.context).getOrientation()))
 
         this.viewModel.pokemons.observe(this.viewLifecycleOwner, Observer { it ->
-            this.adapter = PokemonsAdapter(it.results, object : PokemonItemClickListener {
-                override fun onItemClickListener(id: String) {
-                    findNavController().navigate(R.id.action_listFragment_to_detailFragment,
-                        Bundle().apply { putString("id", id) }
-                    )
+            this.binding.pokemonList.adapter = PokemonsAdapter(it.results, this.requireContext(),
+                object : PokemonItemClickListener {
+                    override fun onItemClickListener(id: String) {
+                        findNavController().navigate(R.id.action_listFragment_to_detailFragment,
+                            Bundle().apply { putString("id", id) }
+                        )
+                    }
                 }
-            })
-            this.binding.pokemonList.adapter = this.adapter
+            )
         })
         this.viewModel.getList(151, 0)
 
