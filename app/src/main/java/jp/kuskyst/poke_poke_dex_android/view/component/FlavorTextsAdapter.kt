@@ -1,6 +1,5 @@
 package jp.kuskyst.poke_poke_dex_android.view.component
 
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil

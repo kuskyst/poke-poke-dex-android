@@ -2,7 +2,6 @@ package jp.kuskyst.poke_poke_dex_android.view.screen
 
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,13 +48,13 @@ class DetailFragment : Fragment() {
             .load(Uri.parse("https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/" + args.id + ".png"))
             .into(this.binding.pokemonImage1)
         Glide.with(this.requireContext())
-            .load(Uri.parse("https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/" + args.id + ".png"))
+            .load(Uri.parse("https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/back/" + args.id + ".png"))
             .into(this.binding.pokemonImage2)
         Glide.with(this.requireContext())
-            .load(Uri.parse("https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/" + args.id + ".png"))
+            .load(Uri.parse("https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/shiny/" + args.id + ".png"))
             .into(this.binding.pokemonImage3)
         Glide.with(this.requireContext())
-            .load(Uri.parse("https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/" + args.id + ".png"))
+            .load(Uri.parse("https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/back/shiny/" + args.id + ".png"))
             .into(this.binding.pokemonImage4)
 
         this.viewModel.getDetail(Integer.parseInt(args.id))
