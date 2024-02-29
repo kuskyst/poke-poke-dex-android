@@ -13,10 +13,10 @@ import jp.kuskyst.poke_poke_dex_android.model.constant.ApiConstant
 import jp.kuskyst.poke_poke_dex_android.model.entity.child.Results
 
 class PokemonsAdapter(
-            private val pokemons: Array<Results>,
-            private val context: Context,
-            private val listener: PokemonItemClickListener)
-        : RecyclerView.Adapter<PokemonsViewHolder>() {
+    private val pokemons: Array<Results>,
+    private val context: Context,
+    private val listener: PokemonItemClickListener)
+: RecyclerView.Adapter<PokemonsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonsViewHolder {
         val inflater = LayoutInflater.from(parent.context)

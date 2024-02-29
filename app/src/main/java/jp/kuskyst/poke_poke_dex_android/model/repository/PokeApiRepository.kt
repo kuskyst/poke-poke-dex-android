@@ -10,14 +10,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
-class PokeApiRepository @Inject constructor() {
-
-    private val service: PokeApiService = Retrofit.Builder()
-        .baseUrl(ApiConstant.pokeApiBaseUrl)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-        .create(PokeApiService::class.java)
+class PokeApiRepository @Inject constructor(
+    private val service: PokeApiService
+) {
 
     suspend fun getList(limit: Int, offset: Int): ListResponse? {
         val response = this.service.getList(limit, offset)

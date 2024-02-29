@@ -12,18 +12,21 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DetailViewModel @Inject constructor(private val repository: PokeApiRepository) : ViewModel() {
+class DetailViewModel @Inject constructor(
+    private val repository: PokeApiRepository)
+: ViewModel() {
+
     val detail = MutableLiveData<DetailResponse>()
     val species = MutableLiveData<SpeciesResponse>()
 
     fun getDetail(id: Int) {
-        viewModelScope.launch(Dispatchers.IO) {
+        this.viewModelScope.launch(Dispatchers.IO) {
             detail.postValue(repository.getDetail(id))
         }
     }
 
     fun getSpecies(id: Int) {
-        viewModelScope.launch(Dispatchers.IO) {
+        this.viewModelScope.launch(Dispatchers.IO) {
             species.postValue(repository.getSpecies(id))
         }
     }

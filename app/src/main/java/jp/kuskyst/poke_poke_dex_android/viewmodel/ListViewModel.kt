@@ -11,11 +11,14 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ListViewModel @Inject constructor(private val repository: PokeApiRepository) : ViewModel() {
+class ListViewModel @Inject constructor(
+    private val repository: PokeApiRepository)
+: ViewModel() {
+
     val pokemons = MutableLiveData<ListResponse>()
 
     fun getList(limit: Int, offset: Int) {
-        viewModelScope.launch(Dispatchers.IO) {
+        this.viewModelScope.launch(Dispatchers.IO) {
             pokemons.postValue(repository.getList(limit, offset))
         }
     }
