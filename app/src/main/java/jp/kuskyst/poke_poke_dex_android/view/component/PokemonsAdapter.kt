@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import jp.kuskyst.poke_poke_dex_android.R
 import jp.kuskyst.poke_poke_dex_android.databinding.RowPokemonBinding
+import jp.kuskyst.poke_poke_dex_android.model.constant.ApiConstant
 import jp.kuskyst.poke_poke_dex_android.model.entity.child.Results
 
 class PokemonsAdapter(
@@ -27,7 +28,7 @@ class PokemonsAdapter(
         holder.binding.id = Uri.parse(this.pokemons[position].url.toString()).lastPathSegment!!
         holder.binding.pokemon = this.pokemons[position]
         Glide.with(this.context)
-            .load(Uri.parse("https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/" + holder.binding.id + ".png"))
+            .load(Uri.parse(ApiConstant.image1Url.replace(ApiConstant.replaceId, holder.binding.id.toString())))
             .into(holder.binding.pokemonRowImage)
         holder.itemView.setOnClickListener {
             this.listener.onItemClickListener(holder.binding.id.toString())
