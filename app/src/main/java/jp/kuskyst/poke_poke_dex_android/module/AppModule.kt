@@ -18,13 +18,12 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providePokeApiService(): PokeApiService {
-        return Retrofit.Builder()
+    fun providePokeApiService(): PokeApiService =
+        Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(PokeApiService::class.java)
-    }
 
     @Singleton
     @Provides
