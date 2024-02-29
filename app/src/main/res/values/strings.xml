@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">poke-poke-dex-android</string>
 
-    <string name="image_url">https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/</string>
+    <string name="for_detail_icon">></string>
     <string name="id_prefix">No.</string>
     <string name="type_interfix">" / "</string>
     <string name="height_suffix">"m / "</string>
