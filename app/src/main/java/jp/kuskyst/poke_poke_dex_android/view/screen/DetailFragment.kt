@@ -13,13 +13,14 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
+import jp.kuskyst.poke_poke_dex_android.R
 import jp.kuskyst.poke_poke_dex_android.databinding.FragmentDetailBinding
 import jp.kuskyst.poke_poke_dex_android.model.constant.ApiConstant
 import jp.kuskyst.poke_poke_dex_android.view.component.FlavorTextsAdapter
 import jp.kuskyst.poke_poke_dex_android.viewmodel.DetailViewModel
 
 @AndroidEntryPoint
-class DetailFragment : Fragment() {
+class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private lateinit var binding: FragmentDetailBinding
     private val viewModel: DetailViewModel by viewModels()
