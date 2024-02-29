@@ -35,8 +35,8 @@ class DetailFragment : Fragment() {
         this.viewModel.species.observe(viewLifecycleOwner, Observer { it ->
             Log.d("res", it.toString())
         })
-        this.viewModel.getDetail(1)
-        this.viewModel.getSpecies(1)
+        this.viewModel.getDetail(Integer.parseInt(args.id))
+        this.viewModel.getSpecies(Integer.parseInt(args.id))
         return this.binding.root
     }
 
