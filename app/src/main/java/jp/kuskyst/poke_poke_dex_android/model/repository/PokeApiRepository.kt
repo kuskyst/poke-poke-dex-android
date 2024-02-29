@@ -1,5 +1,6 @@
 package jp.kuskyst.poke_poke_dex_android.model.repository
 
+import jp.kuskyst.poke_poke_dex_android.model.constant.ApiConstant
 import jp.kuskyst.poke_poke_dex_android.model.entity.DetailResponse
 import jp.kuskyst.poke_poke_dex_android.model.service.PokeApiService
 import jp.kuskyst.poke_poke_dex_android.model.entity.ListResponse
@@ -9,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class PokeApiRepository {
     private var service: PokeApiService = Retrofit.Builder()
-        .baseUrl("https://pokeapi.co/")
+        .baseUrl(ApiConstant.pokeApiBaseUrl)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(PokeApiService::class.java)

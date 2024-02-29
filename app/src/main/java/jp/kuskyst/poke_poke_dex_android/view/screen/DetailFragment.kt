@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import jp.kuskyst.poke_poke_dex_android.databinding.FragmentDetailBinding
+import jp.kuskyst.poke_poke_dex_android.model.constant.ApiConstant
 import jp.kuskyst.poke_poke_dex_android.view.component.FlavorTextsAdapter
 import jp.kuskyst.poke_poke_dex_android.viewmodel.DetailViewModel
 
@@ -38,23 +39,24 @@ class DetailFragment : Fragment() {
         this.binding.flavorTextList.layoutManager = LinearLayoutManager(this.context)
         this.binding.flavorTextList.addItemDecoration(
             DividerItemDecoration(this.context, LinearLayoutManager(this.context).getOrientation()))
-        this.viewModel.detail.observe(viewLifecycleOwner, Observer { it ->
+        this.viewModel.detail.observe(this.viewLifecycleOwner, Observer { it ->
         })
-        this.viewModel.species.observe(viewLifecycleOwner, Observer { it ->
-            this.binding.flavorTextList.adapter = FlavorTextsAdapter(it.flavor_text_entries.filter { it.language.name.equals("ja") }.toTypedArray())
+        this.viewModel.species.observe(this.viewLifecycleOwner, Observer { it ->
+            this.binding.flavorTextList.adapter = FlavorTextsAdapter(
+                it.flavor_text_entries.filter { it.language.name.equals("ja") }.toTypedArray())
         })
 
         Glide.with(this.requireContext())
-            .load(Uri.parse("https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/" + args.id + ".png"))
+            .load(Uri.parse(ApiConstant.image1Url.replace(ApiConstant.replaceId, args.id)))
             .into(this.binding.pokemonImage1)
         Glide.with(this.requireContext())
-            .load(Uri.parse("https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/back/" + args.id + ".png"))
+            .load(Uri.parse(ApiConstant.image2Url.replace(ApiConstant.replaceId, args.id)))
             .into(this.binding.pokemonImage2)
         Glide.with(this.requireContext())
-            .load(Uri.parse("https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/shiny/" + args.id + ".png"))
+            .load(Uri.parse(ApiConstant.image3Url.replace(ApiConstant.replaceId, args.id)))
             .into(this.binding.pokemonImage3)
         Glide.with(this.requireContext())
-            .load(Uri.parse("https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon/back/shiny/" + args.id + ".png"))
+            .load(Uri.parse(ApiConstant.image4Url.replace(ApiConstant.replaceId, args.id)))
             .into(this.binding.pokemonImage4)
 
         this.viewModel.getDetail(Integer.parseInt(args.id))
