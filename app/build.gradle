@@ -23,9 +23,15 @@ android {
         dataBinding = true
     }
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", '"https://pokeapi.co/"')
+            buildConfigField("String", "IMAGE_URL", '"https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon"')
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", '"https://pokeapi.co/"')
+            buildConfigField("String", "IMAGE_URL", '"https://raw.githubusercontent.com/POKEAPI/sprites/master/sprites/pokemon"')
         }
     }
     compileOptions {

@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
+import jp.kuskyst.poke_poke_dex_android.BuildConfig
 import jp.kuskyst.poke_poke_dex_android.R
 import jp.kuskyst.poke_poke_dex_android.databinding.FragmentDetailBinding
-import jp.kuskyst.poke_poke_dex_android.model.constant.ApiConstant
 import jp.kuskyst.poke_poke_dex_android.view.component.FlavorTextsAdapter
 import jp.kuskyst.poke_poke_dex_android.viewmodel.DetailViewModel
 
@@ -45,16 +45,16 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         })
 
         Glide.with(this.requireContext())
-            .load(Uri.parse(ApiConstant.image1Url(args.id)))
+            .load(Uri.parse("${BuildConfig.IMAGE_URL}/${args.id}.png"))
             .into(this.binding.pokemonImage1)
         Glide.with(this.requireContext())
-            .load(Uri.parse(ApiConstant.image2Url(args.id)))
+            .load(Uri.parse("${BuildConfig.IMAGE_URL}/back/${args.id}.png"))
             .into(this.binding.pokemonImage2)
         Glide.with(this.requireContext())
-            .load(Uri.parse(ApiConstant.image3Url(args.id)))
+            .load(Uri.parse("${BuildConfig.IMAGE_URL}/shiny/${args.id}.png"))
             .into(this.binding.pokemonImage3)
         Glide.with(this.requireContext())
-            .load(Uri.parse(ApiConstant.image4Url(args.id)))
+            .load(Uri.parse("${BuildConfig.IMAGE_URL}/back/shiny/${args.id}.png"))
             .into(this.binding.pokemonImage4)
 
         this.viewModel.getDetail(Integer.parseInt(args.id))
