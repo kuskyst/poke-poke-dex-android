@@ -5,9 +5,9 @@
 | ---- | ---- |
 | Language| Android Kotlin 1.8 |
 | Architecture | MVVM |
-| UI | DataBinding, Glide |
+| UI | DataBinding |
 | Transition | Navigation, SafeArgs |
-| Asynchronous | Retrofit 2 |
+| Asynchronous | Retrofit 2, Glide |
 | DI | Hilt |
 | Test | JUnit |
 
