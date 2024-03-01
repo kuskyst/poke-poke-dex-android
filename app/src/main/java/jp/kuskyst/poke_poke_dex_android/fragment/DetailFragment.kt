@@ -1,4 +1,4 @@
-package jp.kuskyst.poke_poke_dex_android.view.screen
+package jp.kuskyst.poke_poke_dex_android.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import jp.kuskyst.poke_poke_dex_android.R
 import jp.kuskyst.poke_poke_dex_android.databinding.FragmentDetailBinding
-import jp.kuskyst.poke_poke_dex_android.view.component.FlavorTextsAdapter
+import jp.kuskyst.poke_poke_dex_android.adapter.FlavorTextsAdapter
 import jp.kuskyst.poke_poke_dex_android.viewmodel.DetailViewModel
 import jp.kuskyst.poke_poke_dex_android.viewmodel.DetailViewModel.ImageType.*
 

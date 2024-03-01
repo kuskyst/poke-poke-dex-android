@@ -1,4 +1,4 @@
-package jp.kuskyst.poke_poke_dex_android.view.component
+package jp.kuskyst.poke_poke_dex_android.adapter
 
 import android.net.Uri
 import android.view.LayoutInflater

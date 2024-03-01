@@ -1,4 +1,4 @@
-package jp.kuskyst.poke_poke_dex_android.view.screen
+package jp.kuskyst.poke_poke_dex_android.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint

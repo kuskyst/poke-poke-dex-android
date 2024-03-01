@@ -51,10 +51,10 @@ class DetailViewModel @Inject constructor(
 
     fun getImage(id: String, type: ImageType) {
         when (type) {
-            ImageType.DEFAULT -> image1
-            ImageType.DEFAULT_BACK -> image2
-            ImageType.SHINY -> image3
-            ImageType.SHINY_BACK -> image4
+            ImageType.DEFAULT -> this.image1
+            ImageType.DEFAULT_BACK -> this.image2
+            ImageType.SHINY -> this.image3
+            ImageType.SHINY_BACK -> this.image4
         }.postValue(this.glide.load(Uri.parse("${BuildConfig.IMAGE_URL}${type.path}${id}.png")))
     }
 

@@ -1,4 +1,4 @@
-package jp.kuskyst.poke_poke_dex_android.view.screen
+package jp.kuskyst.poke_poke_dex_android.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import jp.kuskyst.poke_poke_dex_android.R
 import jp.kuskyst.poke_poke_dex_android.databinding.FragmentListBinding
-import jp.kuskyst.poke_poke_dex_android.view.component.PokemonItemClickListener
-import jp.kuskyst.poke_poke_dex_android.view.component.PokemonsAdapter
+import jp.kuskyst.poke_poke_dex_android.adapter.PokemonItemClickListener
+import jp.kuskyst.poke_poke_dex_android.adapter.PokemonsAdapter
 import jp.kuskyst.poke_poke_dex_android.viewmodel.ListViewModel
 import javax.inject.Inject
 

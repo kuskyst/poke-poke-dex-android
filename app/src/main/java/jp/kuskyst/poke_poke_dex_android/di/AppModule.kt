@@ -1,4 +1,4 @@
-package jp.kuskyst.poke_poke_dex_android.module
+package jp.kuskyst.poke_poke_dex_android.di
 
 import android.content.Context
 import com.bumptech.glide.Glide
