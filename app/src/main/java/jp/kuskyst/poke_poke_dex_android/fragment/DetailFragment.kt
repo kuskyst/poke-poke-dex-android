@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.faltenreich.skeletonlayout.applySkeleton
 import com.github.mikephil.charting.components.XAxis.XAxisPosition
 import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
@@ -37,8 +38,8 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         this.binding.flavorTextList.layoutManager = LinearLayoutManager(this.context)
         this.binding.flavorTextList.addItemDecoration(
             DividerItemDecoration(this.context, LinearLayoutManager(this.context).orientation))
+        this.binding.flavorTextList.applySkeleton(R.layout.row_flavortext, 7).showSkeleton()
         this.vm.detail.observe(this.viewLifecycleOwner) {
-
             this.binding.pokemonStatus.apply {
                 this.xAxis.apply {
                     valueFormatter = IndexAxisValueFormatter(listOf("H", "A", "B", "C", "D", "S"))

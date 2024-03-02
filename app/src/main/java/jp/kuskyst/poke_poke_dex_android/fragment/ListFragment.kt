@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.faltenreich.skeletonlayout.applySkeleton
 import dagger.hilt.android.AndroidEntryPoint
 import jp.kuskyst.poke_poke_dex_android.R
 import jp.kuskyst.poke_poke_dex_android.databinding.FragmentListBinding
@@ -32,9 +33,8 @@ class ListFragment : Fragment(R.layout.fragment_list) {
         this.binding.pokemonList.layoutManager = LinearLayoutManager(this.context)
         this.binding.pokemonList.addItemDecoration(
             DividerItemDecoration(this.context, LinearLayoutManager(this.context).orientation))
-        this.binding.skeletonList.showSkeleton()
+        this.binding.pokemonList.applySkeleton(R.layout.row_pokemon, 16).showSkeleton()
         this.viewModel.pokemons.observe(this.viewLifecycleOwner) {
-            this.binding.skeletonList.showOriginal()
             this.adapter.pokemons = it.results
             this.adapter.listener = object : PokemonItemClickListener {
                 override fun onItemClickListener(id: String) {

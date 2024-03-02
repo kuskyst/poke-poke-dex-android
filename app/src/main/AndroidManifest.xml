@@ -4,7 +4,7 @@
     package="jp.kuskyst.poke_poke_dex_android">
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:name=".PokePokeDexApplication"
+        android:name=".application.PokePokeDexApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
