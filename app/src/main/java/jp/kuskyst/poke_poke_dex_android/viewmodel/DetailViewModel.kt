@@ -57,7 +57,7 @@ class DetailViewModel @Inject constructor(
             ImageType.SHINY -> listOf(this.image3)
             ImageType.SHINY_BACK -> listOf(this.image4)
             ImageType.ALL -> listOf(this.image1, this.image2, this.image3, this.image4)
-        }.forEachIndexed  { index, v ->
+        }.forEachIndexed { index, v ->
             v.postValue(this.glide.load(Uri.parse(
                 "${BuildConfig.IMAGE_URL}${type.path[index]}${id}.png")))
         }

@@ -9,6 +9,12 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.github.mikephil.charting.components.XAxis.XAxisPosition
+import com.github.mikephil.charting.data.*
+import com.github.mikephil.charting.formatter.IAxisValueFormatter
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import com.github.mikephil.charting.formatter.ValueFormatter
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 import dagger.hilt.android.AndroidEntryPoint
 import jp.kuskyst.poke_poke_dex_android.R
 import jp.kuskyst.poke_poke_dex_android.databinding.FragmentDetailBinding
@@ -34,7 +40,21 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         this.binding.flavorTextList.addItemDecoration(
             DividerItemDecoration(this.context, LinearLayoutManager(this.context).orientation))
         this.vm.detail.observe(this.viewLifecycleOwner) {
-            this.binding.pokemonStatus.invalidate()
+
+            this.binding.pokemonStatus.apply {
+                this.xAxis.apply {
+                    valueFormatter = IndexAxisValueFormatter(listOf("H", "A", "B", "C", "D", "S"))
+                    this.position = XAxisPosition.BOTTOM
+                }
+                this.setScaleEnabled(false)
+                this.description.isEnabled = false
+                this.legend.isEnabled = false
+                this.axisRight.isEnabled = false
+                this.axisLeft.axisMinimum = 0F
+                this.data = BarData(mutableListOf<IBarDataSet>(BarDataSet(it.stats.mapIndexed { index, stats ->
+                    BarEntry(index.toFloat(), stats.base_stat.toFloat()) }, "status")))
+                this.animateY(300)
+            }.invalidate()
         }
         this.vm.species.observe(this.viewLifecycleOwner) {
             this.binding.flavorTextList.adapter = FlavorTextsAdapter(
