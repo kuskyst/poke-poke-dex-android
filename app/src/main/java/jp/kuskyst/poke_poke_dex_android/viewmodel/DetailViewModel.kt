@@ -31,11 +31,11 @@ class DetailViewModel @Inject constructor(
     val image4 = MutableLiveData<RequestBuilder<Drawable>>()
 
     enum class ImageType(val path: List<String>) {
-        ALL(listOf("/", "/back/","/shiny/", "/back/shiny/")),
         DEFAULT(listOf("/")),
         DEFAULT_BACK(listOf("/back/")),
         SHINY(listOf("/shiny/")),
-        SHINY_BACK(listOf("/back/shiny/"))
+        SHINY_BACK(listOf("/back/shiny/")),
+        ALL(listOf(DEFAULT.path.first(), DEFAULT_BACK.path.first(), SHINY.path.first(), SHINY_BACK.path.first()))
     }
 
     fun getDetail(id: String) {
@@ -52,14 +52,14 @@ class DetailViewModel @Inject constructor(
 
     fun getImage(id: String, type: ImageType) {
         when (type) {
-            ImageType.ALL -> listOf(this.image1, this.image2, this.image3, this.image4)
             ImageType.DEFAULT -> listOf(this.image1)
             ImageType.DEFAULT_BACK -> listOf(this.image2)
             ImageType.SHINY -> listOf(this.image3)
             ImageType.SHINY_BACK -> listOf(this.image4)
+            ImageType.ALL -> listOf(this.image1, this.image2, this.image3, this.image4)
         }.forEachIndexed  { index, v ->
-            v.postValue(
-                this.glide.load(Uri.parse("${BuildConfig.IMAGE_URL}${type.path[index]}${id}.png")))
+            v.postValue(this.glide.load(Uri.parse(
+                "${BuildConfig.IMAGE_URL}${type.path[index]}${id}.png")))
         }
     }
 
