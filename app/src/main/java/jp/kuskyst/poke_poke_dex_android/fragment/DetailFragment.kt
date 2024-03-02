@@ -20,9 +20,8 @@ import jp.kuskyst.poke_poke_dex_android.viewmodel.DetailViewModel.ImageType.*
 class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private lateinit var binding: FragmentDetailBinding
-    private val vm: DetailViewModel by viewModels()
-
     private val args: DetailFragmentArgs by navArgs()
+    private val vm: DetailViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +41,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         this.vm.image2.observe(this.viewLifecycleOwner) { it.into(this.binding.pokemonImage2) }
         this.vm.image3.observe(this.viewLifecycleOwner) { it.into(this.binding.pokemonImage3) }
         this.vm.image4.observe(this.viewLifecycleOwner) { it.into(this.binding.pokemonImage4) }
+        this.binding.btnBack.setOnClickListener { this.activity?.onBackPressed() }
 
         this.vm.getDetail(args.id)
         this.vm.getSpecies(args.id)
@@ -54,4 +54,3 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     }
 
 }
-

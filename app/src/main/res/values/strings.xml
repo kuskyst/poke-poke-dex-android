@@ -2,7 +2,9 @@
     <string name="app_name">poke-poke-dex-android</string>
 
     <string name="for_detail_icon">></string>
+    <string name="for_list_icon">&lt;</string>
     <string name="id_prefix">No.</string>
+    <string name="name_interfix">\ </string>
     <string name="type_interfix">" / "</string>
     <string name="height_suffix">"m / "</string>
     <string name="weight_suffix">kg</string>
