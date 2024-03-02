@@ -43,7 +43,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         this.vm.detail.observe(this.viewLifecycleOwner) {
             this.binding.pokemonStatus.apply {
                 this.xAxis.apply {
-                    valueFormatter = IndexAxisValueFormatter(listOf("H", "A", "B", "C", "D", "S"))
+                    this.valueFormatter = IndexAxisValueFormatter(listOf("H", "A", "B", "C", "D", "S"))
                     this.position = XAxisPosition.BOTTOM
                     this.setDrawGridLines(false)
                 }
