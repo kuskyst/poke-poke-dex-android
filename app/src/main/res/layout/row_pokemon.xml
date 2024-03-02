@@ -62,8 +62,8 @@
             android:textSize="20sp"
             android:text="@string/for_detail_icon"
             android:gravity="center_vertical"
-            app:layout_constraintTop_toTopOf="@+id/pokemon_row_image"
-            app:layout_constraintBottom_toBottomOf="@+id/pokemon_row_image"
+            app:layout_constraintTop_toTopOf="@+id/pokemon_row_id"
+            app:layout_constraintBottom_toBottomOf="@+id/pokemon_row_name"
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
