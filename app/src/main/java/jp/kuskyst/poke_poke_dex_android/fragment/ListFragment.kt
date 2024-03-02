@@ -32,8 +32,9 @@ class ListFragment : Fragment(R.layout.fragment_list) {
         this.binding.pokemonList.layoutManager = LinearLayoutManager(this.context)
         this.binding.pokemonList.addItemDecoration(
             DividerItemDecoration(this.context, LinearLayoutManager(this.context).orientation))
-
+        this.binding.skeletonList.showSkeleton()
         this.viewModel.pokemons.observe(this.viewLifecycleOwner) {
+            this.binding.skeletonList.showOriginal()
             this.adapter.pokemons = it.results
             this.adapter.listener = object : PokemonItemClickListener {
                 override fun onItemClickListener(id: String) {

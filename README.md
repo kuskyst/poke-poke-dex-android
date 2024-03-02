@@ -7,7 +7,7 @@
 | Architecture | MVVM |
 | DI | Hilt |
 | Binding | ViewBinding, DataBinding |
-| UI | MPAndroidChart |
+| UI | SkeletonLayout, MPAndroidChart |
 | Transition | Navigation, SafeArgs |
 | Asynchronous | Retrofit 2, Okhttp 3, Glide |
 | Test | JUnit |
