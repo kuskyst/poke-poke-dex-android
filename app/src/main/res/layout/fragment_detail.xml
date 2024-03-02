@@ -40,34 +40,33 @@
 
         <LinearLayout
             android:id="@+id/image_list"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:layout_constraintTop_toBottomOf="@+id/pokemon_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
             <ImageView
                 android:id="@+id/pokemon_image1"
                 android:contentDescription="@string/image_description1"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
             <ImageView
                 android:id="@+id/pokemon_image2"
                 android:contentDescription="@string/image_description2"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="20dp" />
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
             <ImageView
                 android:id="@+id/pokemon_image3"
                 android:contentDescription="@string/image_description3"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="20dp" />
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
             <ImageView
                 android:id="@+id/pokemon_image4"
                 android:contentDescription="@string/image_description4"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginStart="20dp" />
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
         </LinearLayout>
 
         <TextView
@@ -76,7 +75,7 @@
             android:layout_height="wrap_content"
             android:text="@string/item_class"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@+id/image_list"
             app:layout_constraintStart_toStartOf="@+id/image_list" />
 
@@ -87,7 +86,7 @@
             android:text="@{vm.species.genera[0].genus}"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintTop_toTopOf="@+id/item_class"
             app:layout_constraintEnd_toEndOf="@+id/image_list" />
 
@@ -97,7 +96,7 @@
             android:layout_height="wrap_content"
             android:text="@string/item_type"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@+id/item_class"
             app:layout_constraintStart_toStartOf="@+id/image_list" />
 
@@ -108,7 +107,7 @@
             android:text="@{vm.detail.types[0].type.name + @string/type_interfix + vm.detail.types[1].type.name}"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintTop_toTopOf="@+id/item_type"
             app:layout_constraintEnd_toEndOf="@+id/image_list" />
 
@@ -118,7 +117,7 @@
             android:layout_height="wrap_content"
             android:text="@string/item_height_weight"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@+id/item_type"
             app:layout_constraintStart_toStartOf="@+id/image_list" />
 
@@ -129,7 +128,7 @@
             android:text="@{String.valueOf(vm.detail.height / 10) + @string/height_suffix + String.valueOf(vm.detail.weight / 10) + @string/weight_suffix}"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintTop_toTopOf="@+id/item_height_weight"
             app:layout_constraintEnd_toEndOf="@+id/image_list" />
 
@@ -139,7 +138,7 @@
             android:layout_height="wrap_content"
             android:text="@string/item_egg_group"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@+id/item_height_weight"
             app:layout_constraintStart_toStartOf="@+id/image_list" />
 
@@ -150,7 +149,7 @@
             android:text="@{vm.species.egg_groups[0].name + @string/egg_group_interfix + vm.species.egg_groups[1].name}"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintTop_toTopOf="@+id/item_egg_group"
             app:layout_constraintEnd_toEndOf="@+id/image_list" />
 
@@ -160,7 +159,7 @@
             android:layout_height="wrap_content"
             android:text="@string/item_flavor_text"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@+id/item_egg_group"
             app:layout_constraintStart_toStartOf="@+id/image_list" />
 
