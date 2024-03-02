@@ -39,6 +39,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         this.binding.flavorTextList.addItemDecoration(
             DividerItemDecoration(this.context, LinearLayoutManager(this.context).orientation))
         this.binding.flavorTextList.applySkeleton(R.layout.row_flavortext, 7).showSkeleton()
+        this.binding.skeletonDetail.showSkeleton()
         this.vm.detail.observe(this.viewLifecycleOwner) {
             this.binding.pokemonStatus.apply {
                 this.xAxis.apply {
@@ -59,6 +60,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         this.vm.species.observe(this.viewLifecycleOwner) {
             this.binding.flavorTextList.adapter = FlavorTextsAdapter(
                 it.flavor_text_entries.filter { v -> v.language.name == "ja" }.toTypedArray())
+            this.binding.skeletonDetail.showOriginal()
         }
         this.vm.image1.observe(this.viewLifecycleOwner) { it.into(this.binding.pokemonImage1) }
         this.vm.image2.observe(this.viewLifecycleOwner) { it.into(this.binding.pokemonImage2) }
