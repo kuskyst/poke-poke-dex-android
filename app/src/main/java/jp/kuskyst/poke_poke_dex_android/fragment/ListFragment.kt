@@ -45,6 +45,7 @@ class ListFragment : Fragment(R.layout.fragment_list) {
             }
             this.binding.pokemonList.adapter = this.adapter
         }
+
         this.viewModel.getList(151, 0)
 
         return this.binding.root

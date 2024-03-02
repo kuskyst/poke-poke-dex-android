@@ -25,8 +25,8 @@ import jp.kuskyst.poke_poke_dex_android.viewmodel.DetailViewModel.ImageType.*
 class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private lateinit var binding: FragmentDetailBinding
-    private val args: DetailFragmentArgs by navArgs()
     private val vm: DetailViewModel by viewModels()
+    private val args: DetailFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
