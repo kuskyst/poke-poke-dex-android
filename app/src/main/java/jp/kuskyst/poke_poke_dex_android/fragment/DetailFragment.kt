@@ -45,6 +45,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                 this.xAxis.apply {
                     valueFormatter = IndexAxisValueFormatter(listOf("H", "A", "B", "C", "D", "S"))
                     this.position = XAxisPosition.BOTTOM
+                    this.setDrawGridLines(false)
                 }
                 this.setScaleEnabled(false)
                 this.description.isEnabled = false
