@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import jp.kuskyst.poke_poke_dex_android.R
 import jp.kuskyst.poke_poke_dex_android.databinding.FragmentListBinding
-import jp.kuskyst.poke_poke_dex_android.adapter.PokemonItemClickListener
-import jp.kuskyst.poke_poke_dex_android.adapter.PokemonsAdapter
+import jp.kuskyst.poke_poke_dex_android.ui.PokemonItemClickListener
+import jp.kuskyst.poke_poke_dex_android.ui.PokemonsAdapter
 import jp.kuskyst.poke_poke_dex_android.viewmodel.ListViewModel
 import javax.inject.Inject
 

@@ -11,14 +11,12 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.mikephil.charting.components.XAxis.XAxisPosition
 import com.github.mikephil.charting.data.*
-import com.github.mikephil.charting.formatter.IAxisValueFormatter
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
-import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 import dagger.hilt.android.AndroidEntryPoint
 import jp.kuskyst.poke_poke_dex_android.R
 import jp.kuskyst.poke_poke_dex_android.databinding.FragmentDetailBinding
-import jp.kuskyst.poke_poke_dex_android.adapter.FlavorTextsAdapter
+import jp.kuskyst.poke_poke_dex_android.ui.FlavorTextsAdapter
 import jp.kuskyst.poke_poke_dex_android.viewmodel.DetailViewModel
 import jp.kuskyst.poke_poke_dex_android.viewmodel.DetailViewModel.ImageType.*
 
