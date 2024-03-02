@@ -10,7 +10,7 @@
 | UI | SkeletonLayout, MPAndroidChart |
 | Transition | Navigation, SafeArgs |
 | Asynchronous | Retrofit 2, Okhttp 3, Glide |
-| Test | JUnit |
+| Test | Android JUnit 4 |
 
 # Todo
 - [x] UI
