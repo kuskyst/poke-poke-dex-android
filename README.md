@@ -5,10 +5,11 @@
 | ---- |--------------------------|
 | Language| Android Kotlin 1.8 |
 | Architecture | MVVM |
-| UI | ViewBinding, DataBinding |
+| DI | Hilt |
+| Binding | ViewBinding, DataBinding |
+| UI | MPAndroidChart |
 | Transition | Navigation, SafeArgs |
 | Asynchronous | Retrofit 2, Okhttp 3, Glide |
-| DI | Hilt |
 | Test | JUnit |
 
 # Todo
