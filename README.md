@@ -17,7 +17,9 @@
 - [ ] DI
 - [ ] unit test
 
-# Image (wip)
-<img width=150 src="https://github.com/kuskyst/poke-poke-dex-android/assets/126965999/f5a9faa3-3ed9-4826-b8b8-6c81e950b08a">
+# Image
+<img width=150 src="https://github.com/kuskyst/poke-poke-dex-android/assets/126965999/fbf8e7ff-8283-4dd5-9c9a-80ac16207e9e">
 →→→
-<img width=150 src="https://github.com/kuskyst/poke-poke-dex-android/assets/126965999/6639eac5-feae-4d47-94d9-8304b7dcd965">
+<img width=150 src="https://github.com/kuskyst/poke-poke-dex-android/assets/126965999/53ed77c0-c103-4d4c-990b-1ac89a7fdd4f">
+→→→
+<img width=150 src="https://github.com/kuskyst/poke-poke-dex-android/assets/126965999/d1982ceb-02a5-44ef-add2-296cc24f83ca">
