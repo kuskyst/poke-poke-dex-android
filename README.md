@@ -20,4 +20,4 @@
 # Image (wip)
 <img width=150 src="https://github.com/kuskyst/poke-poke-dex-android/assets/126965999/f5a9faa3-3ed9-4826-b8b8-6c81e950b08a">
 →→→
-<img width=150 src="https://github.com/kuskyst/poke-poke-dex-android/assets/126965999/8bc37e74-00cd-4341-9752-a660ff617ca8">
+<img width=150 src="https://github.com/kuskyst/poke-poke-dex-android/assets/126965999/b4c25f3a-bb76-436d-a601-37ef946293bf">
