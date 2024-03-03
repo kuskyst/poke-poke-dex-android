@@ -14,7 +14,7 @@
 
 # Todo
 - [x] UI
-- [ ] DI
+- [x] DI
 - [ ] unit test
 
 # Image
