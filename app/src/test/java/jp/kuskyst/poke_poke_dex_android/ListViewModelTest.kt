@@ -10,7 +10,6 @@ import jp.kuskyst.poke_poke_dex_android.viewmodel.ListViewModel
 import org.junit.Assert
 import org.junit.Test
 
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.runner.RunWith
@@ -33,9 +32,7 @@ class ListViewModelTest {
     }
 
     @Test
-    @Composable
     fun getList_success() {
-        this.target = hiltViewModel()
         target.getList(151, 0)
         assertEquals(151, target.pokemons.value!!.results.size)
     }
