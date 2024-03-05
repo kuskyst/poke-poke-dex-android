@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class DetailViewModelTest {
 
     private lateinit var target: DetailViewModel
-    private val context: Context = RuntimeEnvironment.application;
+    private val context: Context = RuntimeEnvironment.getApplication()
 
     @Before
     fun setUp() {
