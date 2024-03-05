@@ -6,17 +6,17 @@ on:
       - master
 jobs:
   build:
-    name: Build on merge
+    name: Build On Merge
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out
+      - name: Check Out
         uses: actions/checkout@v1
       - name: Set up JDK
         uses: actions/setup-java@v1
         with:
           java-version: 18
-      - name: Make gradlew executable
+      - name: Make gradlew Executable
         run: chmod +x ./gradlew
       - name: Run Android Lint
         run: ./gradlew lintDebug
