@@ -16,10 +16,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 18
-      - name: Run Android Lint
-        run: ./gradlew lintDebug
       - name: Make gradlew executable
         run: chmod +x ./gradlew
+      - name: Run Android Lint
+        run: ./gradlew lintDebug
       - name: Run Unit Test
         run: ./gradlew testDebug
       - name: Build with Gradle
