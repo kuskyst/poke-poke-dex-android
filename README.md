@@ -12,11 +12,6 @@
 | Asynchronous | Retrofit 2, Okhttp 3, Glide |
 | Test | Android JUnit 4 |
 
-# Todo
-- [x] UI
-- [x] DI
-- [ ] unit test
-
 # Image
 <img width=200 src="https://github.com/kuskyst/poke-poke-dex-android/assets/126965999/fbf8e7ff-8283-4dd5-9c9a-80ac16207e9e">
 →→→
