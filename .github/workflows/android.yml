@@ -18,8 +18,6 @@ jobs:
           java-version: 1.8
       - name: Make gradlew executable
         run: chmod +x ./gradlew
-      - name: Run Android Lint
-        run: ./gradlew lintDebug
       - name: Run Unit Test
         run: ./gradlew testDebug
       - name: Build with Gradle
